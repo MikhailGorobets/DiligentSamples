@@ -113,6 +113,16 @@ elseif(PLATFORM_TVOS)
         include/SampleApp.hpp
     )
 
+elseif(PLATFORM_EMSCRIPTEN)
+    set(SOURCE
+        src/Emscripten/InputControllerEmscripten.cpp
+        src/Emscripten/SampleAppEmscripten.cpp
+        src/SampleApp.cpp
+    )
+    set(INCLUDE
+        include/Emscripten/InputControllerEmscripten.hpp
+        include/SampleApp.hpp
+    )
 else()
     message(FATAL_ERROR "Unknown platform")
 endif()
